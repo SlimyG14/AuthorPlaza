@@ -12,7 +12,7 @@ public class StoryController {
 
     @GetMapping("/login") // get maping for the login file
     public String requestEntries(Model model) {
-        return "/welcome"; // return the user to the welcome file
+        return "welcome"; // return the user to the welcome file
     }
 
     @PostMapping("/entries") // open the entries file
