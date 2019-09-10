@@ -10,15 +10,15 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class StoryController {
 
 
-    @GetMapping("/login")
+    @GetMapping("/login") // get maping for the login file
     public String requestEntries(Model model) {
-        return "/welcome";
+        return "/welcome"; // return the user to the welcome file
     }
 
-    @PostMapping("/entries")
+    @PostMapping("/entries") // open the entries file
     public String saveEntries(@ModelAttribute Entry entries) {
         entries.setName(entries.getName());
-        return "redirect:/entries";
+        return "redirect:/entries"; // redirect me to the entries file
     }
 
 }
