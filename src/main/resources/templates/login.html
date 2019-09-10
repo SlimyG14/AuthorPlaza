@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
+    <meta content="" charset="UTF-8">
     <title>AuthorSpace login</title>
 </head>
 <body>
@@ -10,12 +10,20 @@
                 <div>
                     <h3>AutorPlaza login</h3>
                 </div>
-                <form>
+                <form action="#" th:action="@{/login.html}" th:object="${user}" method="post">
                     <div>
-                        <label>Username</label>
-                        <input type="text" placeholder="Enter Username" > </br> </br>
+                        <label>Name</label>
+                        <input type="text" th:field="*{name}" placeholder="Enter Name" >
+                        <b th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></b>
+                        </br> </br>
+                        <label>Lastname</label>
+                        <input type="text" th:field="*{lastname}" placeholder="Enter Lastname" >
+                        <b th:if="${#fields.hasErrors('name')}" th:errors="*{name}"> </b>
+                        </br> </br>
                         <label>Password</label>
-                        <input type="text" placeholder="Enter Password"> </br> </br>
+                        <input type="text" th:field="*{password}" placeholder="Enter Password">
+                            <b th:if="${#fields.hasErrors('name')}" th:errors="*{name}"> </b>
+                        </br> </br>
                         <button>Login</button>
                     </div>
                 </form>
