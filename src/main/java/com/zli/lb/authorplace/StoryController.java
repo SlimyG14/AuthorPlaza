@@ -19,16 +19,16 @@ public class StoryController {
         return "login"; // return the user to the specified file
     }
 
-    @PostMapping("/login") // open the specified file
+    @PostMapping("/") // open the specified file
     public String checkUserInfo(@Valid User user, BindingResult bindingresult) {
         if (bindingresult.hasErrors()) {
             System.out.println("Controller: checkUserInfo(): Problem: "
                     + bindingresult.getErrorCount());
-            return "welcome";
+            return "login";
         }
         System.out.println("Controller: checkUserInfo(): "
                     + user.toString());
-        return "redirect:/login"; // redirect the user to the specified file
+        return "welcome"; // redirect the user to the specified file
     }
 
 }

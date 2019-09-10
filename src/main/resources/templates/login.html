@@ -2,29 +2,40 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta content="" charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>AuthorSpace login</title>
 </head>
-<body>
+<body style="background: url('https://s3.amazonaws.com/qualtrics-www/assets/blog/wp-content/uploads/2018/08/shutterstock_1068141515.jpg') no-repeat center center fixed;  -o-background-size: cover; background-size: cover; ">
         <center>
             <div>
                 <div>
-                    <h3>AutorPlaza login</h3>
+                    <h3>AuthorPlaza login</h3>
+                    </br>
                 </div>
-                <form action="#" th:action="@{/login.html}" th:object="${user}" method="post">
+                <form action="#" th:action="@{/}" th:object="${user}" method="post">
                     <div>
-                        <label>Name</label>
+                        <div class="form-group">
+                        <label style="padding-left: 20px">Name: </label>
                         <input type="text" th:field="*{name}" placeholder="Enter Name" >
+                            </br>
                         <b th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></b>
-                        </br> </br>
+                        </div>
+
+                        <div class="form-group">
                         <label>Lastname</label>
                         <input type="text" th:field="*{lastname}" placeholder="Enter Lastname" >
-                        <b th:if="${#fields.hasErrors('name')}" th:errors="*{name}"> </b>
-                        </br> </br>
+                            </br>
+                        <b th:if="${#fields.hasErrors('lastname')}" th:errors="*{name}"> </b>
+                        </div>
+
+                        <div class="form-group">
                         <label>Password</label>
-                        <input type="text" th:field="*{password}" placeholder="Enter Password">
-                            <b th:if="${#fields.hasErrors('name')}" th:errors="*{name}"> </b>
-                        </br> </br>
-                        <button>Login</button>
+                        <input type="password" th:field="*{password}" placeholder="Enter Password">
+                            </br>
+                        <b th:if="${#fields.hasErrors('password')}" th:errors="*{name}"> </b>
+                        </div>
+
+                        <input type="submit" value="Log in">
                     </div>
                 </form>
             </div>
