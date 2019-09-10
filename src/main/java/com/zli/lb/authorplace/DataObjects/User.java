@@ -1,4 +1,4 @@
-package com.zli.lb.authorplace;
+package com.zli.lb.authorplace.DataObjects;
 
 import javax.validation.constraints.NotEmpty;
 
@@ -6,8 +6,10 @@ public class User {
     private int Userid;
     @NotEmpty (message = "name must not be empty.")
     private String name;
+
     @NotEmpty (message = "lastname must not be empty.")
     private String lastname;
+
     @NotEmpty (message = "password cannot be empty.")
     private String password;
 

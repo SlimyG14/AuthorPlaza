@@ -1,4 +1,4 @@
-package com.zli.lb.authorplace;
+package com.zli.lb.authorplace.DataObjects;
 
 public class Author {
     private int AuthorId;
